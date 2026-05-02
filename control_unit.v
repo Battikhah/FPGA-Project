@@ -34,8 +34,8 @@ module control_unit (
         output reg done
 );
 
-reg [3:0] state, next_state; // There are a total of 13 states
-// Idle - init - clear - fetch a - load a - fetch b - load b - multiply - inc k - write c- inc j - inc i - done
+reg [3:0] state, next_state; // There are a total of 12 states
+// Idle - init - clear - fetch a - load a - fetch b - load b - multiply - inc k - write c & inc j - inc i - done
 
 // State register
 always @(posedge clk or posedge reset) 
