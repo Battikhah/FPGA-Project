@@ -52,7 +52,7 @@ always @(*) begin
         5:  next_state = 6; // fetch b - set address to B[k][j]
         6:  next_state = 7; // load b - load B[k][j] into register
         7:  next_state = 8; // multiply - multiply A[i][k] and B[k][j], add to sum
-        8:  next_state = k_done  ? 9  : 2; // inc k - if k done, move to write c, else inc k and repeat
+        8:  next_state = k_done  ? 9  : 3; // inc k - if k done, move to write c, else inc k and repeat
         9:  next_state = j_done  ? 10 : 2; // write c - if j done, move to inc i, else back to clear
         10: next_state = i_done  ? 11 : 2; // inc i - if i done, move to done, else back to clear
         11: next_state = 11; // done
